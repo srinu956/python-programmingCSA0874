@@ -1,0 +1,10 @@
+def is_palindrome(x):
+    if x < 0:
+        return False
+    str_x = str(x)
+    return str_x == str_x[::-1]
+
+x1 = 121
+print(is_palindrome(x1))
+x2 = -121
+print(is_palindrome(x2)) 
