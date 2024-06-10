@@ -1,0 +1,25 @@
+def two_sum(nums, target):
+    # Initialize the hash map
+    num_map = {}
+    
+    # Iterate over the list
+    for i, num in enumerate(nums):
+        # Calculate the complement
+        complement = target - num
+        
+        # Check if the complement is in the map
+        if complement in num_map:
+            return [num_map[complement], i]
+        
+        # Add the current number and its index to the map
+        num_map[num] = i
+
+# Test Case 1
+nums1 = [2, 7, 11, 15]
+target1 = 9
+print(two_sum(nums1, target1))
+
+# Test Case 2
+nums2 = [3, 2, 4]
+target2 = 6
+print(two_sum(nums2, target2))
