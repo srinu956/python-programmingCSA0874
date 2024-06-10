@@ -1,0 +1,18 @@
+def is_valid(s):
+    matching_pairs = {')': '(', '}': '{', ']': '['}
+    stack = []
+    for char in s:
+        if char in matching_pairs.values():
+            stack.append(char)
+        elif char in matching_pairs.keys():
+            if stack == [] or matching_pairs[char] != stack.pop():
+                return False
+        else:
+            pass
+    return stack == []
+
+s1 = "()[]{}"
+print(is_valid(s1)) 
+
+s2 = "(]"
+print(is_valid(s2))  
