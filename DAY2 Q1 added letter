@@ -1,0 +1,8 @@
+def find_added_letter(s, t):
+    for char_s, char_t in zip(sorted(s), sorted(t)):
+        if char_s != char_t:
+            return char_t
+    return t[-1]
+
+print(find_added_letter("abcd", "abcde"))  
+print(find_added_letter("", "y"))        
