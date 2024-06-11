@@ -1,0 +1,5 @@
+def find_needle_in_haystack(haystack, needle):
+    return haystack.find(needle)
+
+print(find_needle_in_haystack("sadbutsad", "sad"))  
+print(find_needle_in_haystack("leetcode", "leeto")) 
