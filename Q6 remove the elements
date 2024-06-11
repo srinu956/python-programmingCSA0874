@@ -1,0 +1,15 @@
+def remove_element(nums, val):
+    slow_ptr = 0
+    for fast_ptr in range(len(nums)):
+        if nums[fast_ptr] != val:
+            nums[slow_ptr] = nums[fast_ptr]
+            slow_ptr += 1
+    return slow_ptr
+
+nums1 = [3, 2, 2, 3]
+val1 = 3
+print(remove_element(nums1, val1)) 
+
+nums2 = [0, 1, 2, 2, 3, 0, 4, 2]
+val2 = 2
+print(remove_element(nums2, val2)) 
