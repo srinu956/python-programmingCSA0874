@@ -1,0 +1,37 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+def removeNthFromEnd(head, n):
+    dummy = ListNode(0)
+    dummy.next = head
+    first = dummy
+    second = dummy
+    for _ in range(n + 1):
+        first = first.next
+    while first is not None:
+        first = first.next
+        second = second.next
+    second.next = second.next.next
+    return dummy.next
+def create_linked_list(lst):
+    dummy_head = ListNode(0)
+    current = dummy_head
+    for number in lst:
+        current.next = ListNode(number)
+        current = current.next
+    return dummy_head.next
+def linked_list_to_list(node):
+    lst = []
+    while node:
+        lst.append(node.val)
+        node = node.next
+    return lst
+head1 = create_linked_list([1, 2, 3, 4, 5])
+n1 = 2
+result1 = removeNthFromEnd(head1, n1)
+print(linked_list_to_list(result1)) 
+head2 = create_linked_list([1])
+n2 = 1
+result2 = removeNthFromEnd(head2, n2)
+print(linked_list_to_list(result2)) 
