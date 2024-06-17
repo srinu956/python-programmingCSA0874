@@ -1,0 +1,41 @@
+from flask import Flask, render_template
+app = Flask(__name__)
+def index():
+    return render_template('index.html')
+if __name__ == '__main__':
+    app.run(debug=True)
+
+  
+THEN THE HTML CODE IS 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-Commerce</title>
+    <!-- Add CSS links here -->
+</head>
+<body>
+    <header>
+        <h1>Simple E-Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to Our Store!</h2>
+            <p>Explore our products and find great deals.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Simple E-Commerce. All rights reserved.</p>
+    </footer>
+</body>
+</html>
